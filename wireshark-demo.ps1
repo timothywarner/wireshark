@@ -33,10 +33,32 @@ Start-Process -FilePath https://www.wireshark.org/docs/man-pages/tshark.html
 
 #region Scenario 1
 
+# Problem: Detecting peer-to-peer (BitTorrent) traffic
+
+# type 'bittorrent' in the display filter box (then clear)
+
+# click Statistics > Protocol Hierarchy
+#    right-click BitTorrent > Apply as Filter
+
+# click Statistics > Endpoints
+#    Click IPv4 (limit to display filter)
+
+#endregion
+
+#region Scenario 2
+
+# Problem: Monitoring website access
+
+# Edit > Preferences > Name Resolution
 
 
 #endregion
 
+#region Scenario 3
 
+# Problem: 
+
+
+#endregion
 
 
