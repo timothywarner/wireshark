@@ -35,6 +35,8 @@ Start-Process -FilePath https://www.wireshark.org/docs/man-pages/tshark.html
 
 # Problem: Detecting peer-to-peer (BitTorrent) traffic
 
+# Open BitTorrent.Transfer1.cap
+
 # type 'bittorrent' in the display filter box (then clear)
 
 # click Statistics > Protocol Hierarchy
@@ -43,21 +45,96 @@ Start-Process -FilePath https://www.wireshark.org/docs/man-pages/tshark.html
 # click Statistics > Endpoints
 #    Click IPv4 (limit to display filter)
 
+# Filter on source IP 213.122.214.127
+
+# Select HTTP > Prepare AND filter
+
 #endregion
 
 #region Scenario 2
 
-# Problem: Monitoring website access
+# Problem: Detecting inappropriate web surfing (esp images)
 
 # Edit > Preferences > Name Resolution
 
+# open http_with_jpegs.cap
+
+# Edit > Prefs > Protocols > TCP > Allow subdissector to reassemble TCP streams
+
+# Ctrl + G to goto packet 479
+
+# Right-click JPEG field > Export Packet Bytes
+
+# File > Export Objects > HTTP
+
+# frame 61 > Right-click > Follow TCP Conversation
+
+# try http.content_type == "image/jpeg"
 
 #endregion
 
 #region Scenario 3
 
-# Problem: 
+# Problem: Decode SSL traffic (or SSL, or secure PowerShell, etc)
 
+# open https-ssl3session.pcapng
+
+# check expert system
+
+# Filter on ssl
+
+# Edit > Prefs > Protocols > SSL > Edit
+
+#endregion
+
+#region Scenario 4
+
+# Wi-Fi capture
+
+# open  in LEGACY
+
+# Create new profile named WiFi
+
+# View > Wireless Toolbar
+
+# Decryption Keys > Induction
+
+# SSID Coherer
+
+# Edit > Prefs > Columns
+
+#     wlan_mgmt.ssid, IEEE 802.11 RSSI, IEEE 802.11 TX, Freq/Channel
+
+# Column > Add > Custom > wlan_mgmt.ssid for name
+# note wireless toolbar
+
+# Statistics > WLAN Traffic
+
+Start-Process -FilePath https://www.riverbed.com/products/steelcentral/steelcentral-riverbed-airpcap.html
+
+#endregion
+
+#region Scenario 5
+
+# Problem: Port scanning
+
+# open synscan.pcap
+
+# filter on source 172.16.0.8
+
+# Expose TCP destination port
+
+#endregion
+
+#region Web surfing history/downloads
+
+# open websurfing-download.pcapng
+
+# File > Export > HTTP (note .msi)
+
+# File d.7-zip.org > Follow TCP Stream
+
+# Stats > Conversations > Name res, Display filter
 
 #endregion
 
