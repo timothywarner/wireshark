@@ -8,6 +8,7 @@
  
 # Press CTRL+M to expand/collapse regions
 
+Set-Location -Path C:\Users\Tim\Desktop\wireshark
 #region tshark.exe
 
 # set permanent environment variable
@@ -21,13 +22,17 @@ tshark -v
 tshark -D
 
 # capture on a specific NIC
-tshark -i Ethernet0 -w capture-output.pcap
+tshark -i 1 -w capture-output.pcap
 
 # load a pcap file
 tshark -r capture-output.pcap
 
 # man page
 Start-Process -FilePath https://www.wireshark.org/docs/man-pages/tshark.html
+
+Get-ChildItem -Path 'C:\Program Files\Wireshark' -Filter *.exe | Select-Object -Property Name | Format-Wide -Column 2
+
+dumpcap -h
 
 #endregion
 
