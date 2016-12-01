@@ -2,7 +2,7 @@
 # #############################################################################
 # Wireshark Demo
 # AUTHOR:  Tim Warner
-# EMAIL: timothy-warner@pluralsight.com
+# EMAIL: timothywarner316@gmail.com
 # TWITTER: @TechTrainerTim
 # #############################################################################
  
