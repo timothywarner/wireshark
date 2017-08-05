@@ -83,13 +83,6 @@ Finding inappropriate content
 		- In response 
 		- right-click PNG > export selected bytes
 
-
-
-
-
-
-
-
 ### Part 2.5 of 3: GeoIP
 - database: https://dev.maxmind.com/geoip/legacy/geolite/
 - City, country, ASN
